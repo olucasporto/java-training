@@ -1,5 +1,4 @@
-
-public class TestaVariaveis {
+public class TesteDouble {
 	
 	public static void main(String[] args) {
 		
