@@ -1,5 +1,5 @@
-public class TesteDouble {
-	
+
+public class TestaDouble {
 	public static void main(String[] args) {
 		
 		System.out.println("Olá novo teste");	
@@ -18,5 +18,4 @@ public class TesteDouble {
 		
 		
 	}
-	
 }

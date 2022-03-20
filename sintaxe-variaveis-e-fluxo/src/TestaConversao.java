@@ -1,7 +1,8 @@
 
 public class TestaConversao {
-
-    public static void main(String[] args) {
+	
+	public static void main(String[] args) {
+		
         double salario = 1270.50;
         int valor = (int) salario;      
     	System.out.println(valor);
@@ -35,10 +36,12 @@ public class TestaConversao {
         
         //short vai ser uma variável usada para números menores, com o máximo de 16 bits
         short valorPequeno = 2131;
-        
+
+        System.out.println(valorPequeno);
         //byte vai ter o limite de 8 bits
         byte valorByte = 127;
-        
+
+        System.out.println(valorByte);
         //ai quando for um número que nem cabe na tela você não vai usar esses números primitivos e sim objtetos,
         //bibliotecas. Pra salarios mesmo, o que vai ser usado é a classe "java.math.BigDecimal"        
         
@@ -56,4 +59,5 @@ public class TestaConversao {
         //float pontoFlutuante = 3.14f;
         
     }
+	
 }
