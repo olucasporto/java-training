@@ -42,21 +42,27 @@ public class TestaConversao {
         byte valorByte = 127;
 
         System.out.println(valorByte);
-        //ai quando for um número que nem cabe na tela você não vai usar esses números primitivos e sim objtetos,
-        //bibliotecas. Pra salarios mesmo, o que vai ser usado é a classe "java.math.BigDecimal"        
+        
+        
+        //quando for um número que nem cabe na tela você não vai usar esses números primitivos e sim objtetos,
+        //bibliotecas. Pra salarios, o que vai ser usado é a classe "java.math.BigDecimal"        
         
         
         //agora temos esse caso:
         //o resultado desses dois valores deveria ser 0.3 porém sai 0.3000...4
-        //tem uma explicação mais engenhosa no site https://0.30000000000000004.com/
-        
+        //tem uma explicação mais engenhosa no site https://0.30000000000000004.com/        
         double valor1 = 0.2;
         double valor2 = 0.1;
         double total = valor1+valor2;
        
         System.out.println(total);
         
-        //float pontoFlutuante = 3.14f;
+        //alem do double (que é 64 bits), temos o float, que é de 32 bits
+        //nesse caso, o Java considera o 3.14 como um número de 64bits e isso não cabe no float
+        //você pode tanto fazer um casting - usando um (float) no começo do número - quanto botar um "f" no final
+        float pontoFlutuante = 3.14f;
+        
+        System.out.println(pontoFlutuante);
         
     }
 	
