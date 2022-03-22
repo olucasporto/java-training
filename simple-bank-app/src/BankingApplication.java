@@ -23,14 +23,14 @@ class BankAccount {
 		customerId = cid;
 	}
 
-	void deposit(int amount) {
+	void deposit(double amount) {
 		if (amount != 0) {
 			balance += amount;
 			previousTransaction = amount;
 		}
 	}
 
-	void withdraw(int amount) {
+	void withdraw(double amount) {
 		if (amount != 0) {
 			balance -= amount;
 			previousTransaction = -amount;
@@ -83,7 +83,7 @@ class BankAccount {
 				System.out.println("Option selected: \nB. Deposit \n");
 				System.out.println("---------------------------------");
 				System.out.print("Enter an amount to deposit: ");
-				int amount = scanner.nextInt();
+				double amount = scanner.nextDouble();
 				deposit(amount);
 				System.out.println("---------------------------------");
 				System.out.println("\n");
@@ -92,7 +92,7 @@ class BankAccount {
 				System.out.println("Option selected: \nC. Withdraw \n");
 				System.out.println("---------------------------------");
 				System.out.print("Enter an amount to withdraw: ");
-				int amount2 = scanner.nextInt();
+				double amount2 = scanner.nextDouble();
 				withdraw(amount2);
 				System.out.println("---------------------------------");
 				System.out.println("\n");
