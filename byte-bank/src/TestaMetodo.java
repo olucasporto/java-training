@@ -5,6 +5,8 @@ public class TestaMetodo {
 
 		Conta contaDoLucas = new Conta();
 
+		contaDoLucas.titular = "Lucas";
+		
 		Conta contaDoPedro = new Conta();
 
 		contaDoPedro.titular = "Pedro";
