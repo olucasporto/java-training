@@ -5,83 +5,64 @@ public class Conta {
 	private int numero;
 	private Cliente titular;
 
-	public double getSaldo() {
+	private static int total;
 
-		return this.saldo;
+	public Conta(int agencia, int numero, Cliente titular) {
+		this.agencia = agencia;
+		this.numero = numero;
+		this.titular = titular;
+		Conta.total++;
 	}
 	
-	public void depositaSaldo(double valor) {
+	public Conta(Cliente titular) {
+		this(0, 0, titular);
+	}
+	
 
-		this.saldo += valor;
-		System.out.println("Ola " + this.titular.getNome() + ", voce depositou $ " + valor + 
-				" na sua conta!" );
-
+	public double getSaldo() {
+		return this.saldo;
 	}
 
-	public double sacaSaldo(double valor) {
-		if (this.saldo >= valor) {
+	public void depositaSaldo(double valor) {
+		this.saldo += valor;
+		System.out.println("Ola " + this.titular.getNome() + ", voce depositou $ " + valor + " na " + "sua conta!");
+	}
 
+	public void sacaSaldo(double valor) {
+		if (this.saldo >= valor) {
 			this.saldo -= valor;
 			System.out.println(this.titular.getNome() + ", voce sacou $ " + valor);
-			return valor;
-
+		} else {
+			System.out.println(
+					this.titular.getNome() + ", voce tentou sacar $ " + valor + " mas seu saldo e insuficiente...");
 		}
-		System.out.println(this.titular.getNome() + ", voce tentou sacar $ " + valor + 
-				" mas seu saldo e insuficiente...");
-		return 0;
-
 	}
 
-	public double transfereSaldo(double valorTransferencia, Conta contaDestino) {
+	public void transfereSaldo(double valorTransferencia, Conta contaDestino) {
 		if (this.saldo >= valorTransferencia) {
-
 			this.saldo -= valorTransferencia;
 			contaDestino.saldo += valorTransferencia;
-			System.out.println(this.titular.getNome() + ", voce transferiu $ " + 
-			valorTransferencia + " para a conta de " + contaDestino.titular.getNome() + "!");
-			
-			return valorTransferencia;
-
+			System.out.println(this.titular.getNome() + ", voce transferiu $ " + valorTransferencia
+					+ " para a conta de " + contaDestino.titular.getNome() + "!");
+		} else {
+			System.out.println(this.titular.getNome() + ", voce tentou transferir $ " + valorTransferencia
+					+ " mas seu saldo e insuficiente");
 		}
-		
-		System.out.println(this.titular.getNome() + ", voce tentou transferir $ " + valorTransferencia + " mas "
-				+ "seu saldo e insuficiente");
-		
-		return 0;
-
 	}
 
 	public int getAgencia() {
-
 		return this.agencia;
 	}
-	
-	public void setAgencia(int agencia) {
 
-		this.agencia = agencia;
-
-	}
-	
 	public int getNumero() {
 		return this.numero;
 	}
 
-	public void setNumero(int numero) {
-		if(numero < 0) {
-			System.out.println("numero nao pode ser negativo");
-		} else { 
-			this.numero = numero;
-		}
-		
-	}
-	
 	public Cliente getTitular() {
-
 		return this.titular;
 	}
 
-	public void setTitular(Cliente titular) {
-		this.titular = titular;
+	public static int getTotal() {
+		return Conta.total;
 	}
-
 }

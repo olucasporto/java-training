@@ -2,26 +2,32 @@
 public class TestaGetESet {
 
 	public static void main(String[] args) {
-		Conta conta1 = new Conta();
-		
-		Conta conta2 = new Conta();
-		
-		Cliente lucao = new Cliente(); 
-		
-		Cliente pedrinho = new Cliente();
 
-		conta1.setTitular(pedrinho);
+		Cliente lucao = new Cliente("Lucao Lindao");
+
+		Cliente pedrinho = new Cliente("Predelas");
+
+		Conta contaPredelas = new Conta(122, 333, pedrinho);
+
+		Conta contaPredelas2 = new Conta(pedrinho);
 		
-		conta2.setTitular(lucao);
+		Conta contaLucao = new Conta(22, 443, lucao);
 		
-		pedrinho.setNome("Predelas");
+		Conta contaLucao2 = new Conta(12, 543, lucao);
+
+		contaPredelas.depositaSaldo(100);
+
+		contaPredelas.transfereSaldo(50, contaLucao);
 		
-		lucao.setNome("Lucao Lindao");
+		contaPredelas.transfereSaldo(50, contaLucao2);
 		
-		conta1.depositaSaldo(100);
+		System.out.println(contaPredelas2.getNumero());
 		
-		conta1.transfereSaldo(50, conta2);
+		System.out.println(contaPredelas2.getAgencia());
+
+		System.out.println("No nosso banco temos o total de " + Conta.getTotal() + " contas "
+				+ "e " + Cliente.getTotal() + " clientes!");
 		
 	}
-	
+
 }
