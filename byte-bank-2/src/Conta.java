@@ -1,6 +1,6 @@
 
 public class Conta {
-	double saldo;
+	private double saldo;
 	int agencia;
 	int numero;
 	Cliente titular;
@@ -15,11 +15,11 @@ public class Conta {
 		if (this.saldo >= valor) {
 
 			this.saldo -= valor;
-			return "Você sacou " + valor;
+			return "Voce sacou $ " + valor;
 
 		}
 
-		return "Você tentou sacar " + valor + " mas seu saldo é insuficiente...";
+		return "Voce tentou sacar $ " + valor + " mas seu saldo e insuficiente...";
 
 	}
 
@@ -28,11 +28,24 @@ public class Conta {
 
 			this.saca(valor);
 			destino.deposita(valor);
-			return "Você transferiu " + valor + " para " + destino.titular;
+			return "Voce transferiu $ " + valor + " para " + destino.titular.nome;
 
 		}
 
-		return "Você não tem dinheiro o suficiente para essa transação";
+		return "Voce nao tem dinheiro o suficiente para essa transacao";
 
+	}
+	
+	public void getSaldo() {
+		
+		System.out.println("Voc� possui $ " + this.saldo + " na sua conta.");
+	}
+	
+	public void setAgencia(int valor) {
+		
+		this.agencia = valor;
+		
+		System.out.println("O n�mero da sua ag�ncia � " + this.agencia);
+		
 	}
 }
