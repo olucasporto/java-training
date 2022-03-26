@@ -1,9 +1,14 @@
 
 public class Programador extends Funcionario{
 	
+	public Programador() {
+
+	}
+
+	@Override
 	public double getBonificacao() {
-		System.out.println("bonificando Editor de vídeo");
-		return super.getSalario() - 500;
+		System.out.println("Bonificacao de Programador (200)");
+		return 200;
 	}
 	
 }

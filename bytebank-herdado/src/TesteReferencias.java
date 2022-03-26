@@ -5,15 +5,15 @@ public class TesteReferencias {
 
 		Funcionario pedro = new Gerente();
 		pedro.setNome("Pedro");
-		pedro.setSalario(10000);
+		pedro.setSalario(1000);
 
 		Funcionario lucao = new Programador();
 		lucao.setNome("Lucas");
-		lucao.setSalario(2000);
+		lucao.setSalario(1000);
 
 		Funcionario andre = new EditorVideo();
 		andre.setNome("Andre");
-		andre.setSalario(5000);
+		andre.setSalario(1000);
 
 		ControleBonificacao controle = new ControleBonificacao();
 

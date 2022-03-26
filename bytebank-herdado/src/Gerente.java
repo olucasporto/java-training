@@ -9,7 +9,7 @@ public class Gerente extends Funcionario {
 	
 	@Override
 	public double getBonificacao() {
-		System.out.println("bonificando Gerente");
+		System.out.println("Bonificacao de Gerente (Salario)");
 		return super.getSalario();
 	}
 	
