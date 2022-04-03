@@ -1,3 +1,9 @@
+package br.com.bytebank.banco.test;
+
+import br.com.bytebank.banco.modelo.AcaoBolsa;
+import br.com.bytebank.banco.modelo.CalculadorDeImposto;
+import br.com.bytebank.banco.modelo.ContaCorrente;
+import br.com.bytebank.banco.modelo.SeguroDeVida;
 
 public class TesteTributaveis {
 
@@ -11,13 +17,13 @@ public class TesteTributaveis {
 		SeguroDeVida seguro = new SeguroDeVida();
 
 		CalculadorDeImposto calc = new CalculadorDeImposto();
-		
+
 		calc.registra(cc);
 		calc.registra(acao);
 		calc.registra(seguro);
-		
+
 		System.out.println(calc.getTotalImposto());
-		
+
 	}
 
 }
