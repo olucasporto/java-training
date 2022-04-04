@@ -19,6 +19,8 @@ public class TesteSaca {
 
 		System.out.println(conta.getSaldo());
 
+		System.out.println();
+		
 	}
 
 }
