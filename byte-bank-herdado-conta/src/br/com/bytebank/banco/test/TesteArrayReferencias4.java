@@ -9,6 +9,8 @@ public class TesteArrayReferencias4 {
 	public static void main(String[] args) {
 
 		Conta[] contas = new Conta[5];
+		
+		System.out.println(contas.length);
 
 		ContaCorrente cc1 = new ContaCorrente(10, 10);
 
